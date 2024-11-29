@@ -7,11 +7,11 @@ from sklearn.model_selection import train_test_split
 # Load the dataset
 df = pd.read_csv(r"./diabetes.csv")
 
-# Header with professional theme
+# Header with a fresh color theme
 st.markdown("""
     <style>
         body {
-            background-color: #f5f5f5;
+            background-color: #f2f6fc;
             font-family: 'Arial', sans-serif;
         }
         .header {
@@ -19,26 +19,26 @@ st.markdown("""
             font-family: 'Verdana', sans-serif;
             font-weight: bold;
             text-align: center;
-            color: #0c4b33;
+            color: #1e3a8a;  /* Dark blue */
             margin-bottom: 20px;
             padding-top: 20px;
         }
         .sub-header {
             font-size: 24px;
             font-family: 'Verdana', sans-serif;
-            color: #4a7c59;
+            color: #3b82f6;  /* Lighter blue */
             text-align: center;
             margin-bottom: 30px;
         }
         .highlight {
             font-size: 20px;
-            color: #0c4b33;
+            color: #1e3a8a;  /* Dark blue */
             font-weight: bold;
             text-align: center;
         }
         hr {
             border: none;
-            border-top: 3px solid #8bc34a;
+            border-top: 3px solid #3b82f6;  /* Lighter blue */
             margin-top: 20px;
             margin-bottom: 20px;
         }
@@ -48,16 +48,16 @@ st.markdown("""
     <hr>
 """, unsafe_allow_html=True)
 
-# Sidebar inputs with a refined design
+# Sidebar inputs with updated color scheme
 st.sidebar.title("📝 Patient Information")
 st.sidebar.markdown("""
     <style>
         .sidebar .sidebar-content {
-            background-color: #eaf3e1;
+            background-color: #eef2f9;  /* Light gray */
             padding: 20px;
         }
         .stSidebar {
-            background-color: #d9f2d8;
+            background-color: #e0e7ff;  /* Light blue */
             padding: 15px;
         }
     </style>
@@ -92,7 +92,7 @@ def get_user_input():
 user_data = get_user_input()
 
 # Data Summary
-st.markdown("<h2 style='color: #0c4b33;'>🔬 Health Data Overview</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='color: #1e3a8a;'>🔬 Health Data Overview</h2>", unsafe_allow_html=True)
 st.table(user_data)  # Display the input data in a table format
 
 # Split the data
@@ -108,7 +108,7 @@ rf.fit(x_train, y_train)
 st.markdown("""
     <style>
         .stButton>button {
-            background-color: #0c4b33;
+            background-color: #3b82f6;  /* Lighter blue */
             color: white;
             font-size: 20px;
             padding: 12px;
@@ -118,14 +118,14 @@ st.markdown("""
             width: 100%;
         }
         .stButton>button:hover {
-            background-color: #145c45;
+            background-color: #2563eb;  /* Darker blue */
         }
     </style>
 """, unsafe_allow_html=True)
 
 # Button for prediction
 if st.button('📊 Analyze Risk'):
-    st.markdown("<h3 style='text-align: center; color: #4a7c59;'>🔄 Analyzing your health data...</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: #3b82f6;'>🔄 Analyzing your health data...</h3>", unsafe_allow_html=True)
     
     progress = st.progress(0)
     for percent in range(100):
@@ -134,13 +134,13 @@ if st.button('📊 Analyze Risk'):
     prediction = rf.predict(user_data)
     
     st.markdown("<hr>", unsafe_allow_html=True)
-    st.markdown("<h2 style='color: #0c4b33;'>📋 Prediction Result</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='color: #1e3a8a;'>📋 Prediction Result</h2>", unsafe_allow_html=True)
     result = 'You are not diabetic.' if prediction[0] == 0 else 'You are **at risk of diabetes.**'
     st.markdown(f"<p class='highlight'>{result}</p>", unsafe_allow_html=True)
     
     # Display model accuracy
     accuracy = accuracy_score(y_test, rf.predict(x_test)) * 100
-    st.markdown(f"<p style='color: #4a7c59; font-size: 18px;'>Model Accuracy: {accuracy:.2f}%</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='color: #3b82f6; font-size: 18px;'>Model Accuracy: {accuracy:.2f}%</p>", unsafe_allow_html=True)
 
 else:
-    st.markdown("<h3 style='text-align: center; color: #4a7c59;'>👈 Enter your data and click 'Analyze Risk'</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: #3b82f6;'>👈 Enter your data and click 'Analyze Risk'</h3>", unsafe_allow_html=True)
