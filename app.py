@@ -12,30 +12,35 @@ st.markdown("""
     <style>
         body {
             background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
         }
         .header {
-            font-size: 50px;
+            font-size: 48px;
             font-family: 'Verdana', sans-serif;
             font-weight: bold;
             text-align: center;
             color: #0c4b33;
             margin-bottom: 20px;
+            padding-top: 20px;
         }
         .sub-header {
-            font-size: 22px;
+            font-size: 24px;
             font-family: 'Verdana', sans-serif;
             color: #4a7c59;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 30px;
         }
         .highlight {
-            font-size: 18px;
+            font-size: 20px;
             color: #0c4b33;
             font-weight: bold;
+            text-align: center;
         }
         hr {
             border: none;
-            border-top: 2px solid #8bc34a;
+            border-top: 3px solid #8bc34a;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
     </style>
     <div class="header">🩺 Diabetes Risk Checker</div>
@@ -48,10 +53,12 @@ st.sidebar.title("📝 Patient Information")
 st.sidebar.markdown("""
     <style>
         .sidebar .sidebar-content {
-            background-color: #f7f8f9;
+            background-color: #eaf3e1;
+            padding: 20px;
         }
         .stSidebar {
-            background-color: #e1e5ea;
+            background-color: #d9f2d8;
+            padding: 15px;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -104,10 +111,11 @@ st.markdown("""
             background-color: #0c4b33;
             color: white;
             font-size: 20px;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
+            width: 100%;
         }
         .stButton>button:hover {
             background-color: #145c45;
